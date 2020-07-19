@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CardList from "./Components/CardList/CardList.jsx";
+import SearchBox from "./Components/SearchBox/SearchBox";
 
 class App extends Component {
   state = {
@@ -28,14 +29,14 @@ class App extends Component {
     );
 
     return (
-      <>
-        <input
-          type="search"
-          placeholder="search monsters"
-          onChange={this.filterMonsters}
+      <div className="App">
+        <h1>Monsters Rolodex</h1>
+        <SearchBox
+          placeholder="Search monsters"
+          handleChange={this.filterMonsters}
         />
         <CardList monsters={filteredMonsters} />
-      </>
+      </div>
     );
   }
 }
